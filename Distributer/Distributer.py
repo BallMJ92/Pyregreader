@@ -14,6 +14,7 @@ class ClientDistributer:
         #iterates over the hostlist variable and runs command
         for hosts in self.hostlist:
             try:
+                # Below required files to be copied from Receiver host machine to all required clients using 'r copy'
                 sendMsvdll = (r'copy C:\Windows\System32\msvcp140.dll \\%s\c$\\Windows\System32\msvcp140.dll' % (hosts))
                 sendVcruntime = (r'copy C:\Windows\System32\vcruntime140.dll \\%s\c$\\Windows\System32\vcruntime140.dll' % (hosts))
                 sendProgram = (r'xcopy C:\Users\mball\Desktop\PythonSoftware\Client\* \\%s\c$\programdata\ /e /i' % (hosts))
