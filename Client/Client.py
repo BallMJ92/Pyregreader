@@ -87,8 +87,8 @@ class installedSoftwareAuditor():
         #print(self.sophosLastUpdate)
 
     def portSender(self):
-        IP = '172.19.2.1' # IP associated with CYJQJG2 which hosts the Receiver
-        PORT = 5000
+        IP = '' # IP associated with Receiver
+        PORT = 5000 # Receiver host port to send information
         installedprograms = ('\n'.join(map(str, self.regprograms)))
         s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         s.sendto(installedprograms.encode(), (IP, PORT))
